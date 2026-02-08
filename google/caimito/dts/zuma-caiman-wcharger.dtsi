@@ -12,7 +12,7 @@
 	google,epp_neg_pwr = <13500>;
 	google,wait_prop_irq_ms = <6000>;
 	/* RTx */
-	google,wcin_inlim_en = <&max77779_gpio 0 GPIO_ACTIVE_HIGH>;
+	google,wcin_inlim_en-gpios = <&max77779_gpio 0 GPIO_ACTIVE_HIGH>;
 	idt,gpp-cmfet = <48>;
 	idt,has_rtx_gpio;
 	/* BPP ICL */
@@ -36,7 +36,5 @@
 	fod_hpp_1 = [a1 36 b7 d0 92 35 93 2f 91 2d 96 ed ad 40 80 28];
 	fod_hpp_2 = [aa 30 98 50 92 4d 93 47 90 53 97 fa a5 61 80 28];
 	fod_hpp_3 = [b4 20 a7 19 96 4a 93 60 90 71 96 27 a9 74 80 28];
-
-	google,wlc_qispec = <0x1301>;
 };
 

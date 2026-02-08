@@ -444,15 +444,7 @@
 	};
 
 	pixel-reboot {
-		compatible = "google,pixel-reboot";
-		syscon = <&pmu_system_controller>;
-		pshold-control-offset = <0x3E9C>;
-		pshold-control-trigger = <0x100>;
-		swreset-system-offset = <0x3A00>;
-		swreset-system-trigger = <0x2>;
-		reboot-cmd-offset = <0x0810>;
-		dump-gpr-offset = <0x0808>;
-		force-warm-reboot-on-thermal-shutdown;
+		compatible = "google,pixel-reboot-v1";
 	};
 
 	gpio_keys: gpio_keys {
@@ -662,7 +654,6 @@
 			phy-names = "usb2-phy", "usb3-phy";
 			/* support usb offloading, 0: disabled, 1: audio */
 			offload = <1>;
-			direct-usb-access;
 		};
 	};
 
@@ -1140,7 +1131,6 @@
 					l3-cachemiss-ev = <0x002A>;
 					inst-ev = <0x0008>;
 					cyc-ev = <0x0011>;
-					stall-backend-mem-ev = <0x0024>;
 				};
 			};
 			cpu1 {
@@ -1149,7 +1139,6 @@
 					l3-cachemiss-ev = <0x002A>;
 					inst-ev = <0x0008>;
 					cyc-ev = <0x0011>;
-					stall-backend-mem-ev = <0x0024>;
 				};
 			};
 			cpu2 {
@@ -1158,7 +1147,6 @@
 					l3-cachemiss-ev = <0x002A>;
 					inst-ev = <0x0008>;
 					cyc-ev = <0x0011>;
-					stall-backend-mem-ev = <0x0024>;
 				};
 			};
 			cpu3 {
@@ -1167,7 +1155,6 @@
 					l3-cachemiss-ev = <0x002A>;
 					inst-ev = <0x0008>;
 					cyc-ev = <0x0011>;
-					stall-backend-mem-ev = <0x0024>;
 				};
 			};
 			cpu4 {
@@ -1176,7 +1163,6 @@
 					l3-cachemiss-ev = <0x002A>;
 					inst-ev = <0x0008>;
 					cyc-ev = <0x0011>;
-					stall-backend-mem-ev = <0x0024>;
 				};
 			};
 			cpu5 {
@@ -1185,7 +1171,6 @@
 					l3-cachemiss-ev = <0x002A>;
 					inst-ev = <0x0008>;
 					cyc-ev = <0x0011>;
-					stall-backend-mem-ev = <0x0024>;
 				};
 			};
 			cpu6 {
@@ -1194,7 +1179,6 @@
 					l3-cachemiss-ev = <0x002A>;
 					inst-ev = <0x0008>;
 					cyc-ev = <0x0011>;
-					stall-backend-mem-ev = <0x0024>;
 				};
 			};
 			cpu7 {
@@ -1203,7 +1187,6 @@
 					l3-cachemiss-ev = <0x002A>;
 					inst-ev = <0x0008>;
 					cyc-ev = <0x0011>;
-					stall-backend-mem-ev = <0x0024>;
 				};
 			};
 		};

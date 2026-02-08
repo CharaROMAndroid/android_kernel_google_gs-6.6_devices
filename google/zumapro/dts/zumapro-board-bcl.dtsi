@@ -13,7 +13,7 @@
 	fragment@battery {
 		target-path = "/";
 		__overlay__ {
-			google_mitigation: google,mitigation {
+			google_mitigation: google-mitigation {
 				compatible = "google,google-bcl";
 				#thermal-sensor-cells = <1>;
 				google,charger = <&max77779_chg>;
@@ -32,10 +32,6 @@
 				tpu_clkdivstep = <0x41>;
 				gpu_con_heavy = <0xfff04381>;
 				gpu_con_light = <0xfff041c1>;
-				cpu2_con_heavy = <0xfff041c0>;
-				cpu2_con_light = <0xfff041c3>;
-				cpu1_con_heavy = <0xfff041c0>;
-				cpu1_con_light = <0xfff041c3>;
 				gpu_clkdivstep = <0x41>;
 				cpu2_clkdivstep = <0x41>;
 				cpu1_clkdivstep = <0x41>;
@@ -118,11 +114,11 @@
 				main_mitigation {
 					ch1 {
 						module_id = <MIF_MITIGATION_ID>;
-						threshold = <291200>; /* ODPM LPF RAW */
+						threshold = <145600>; // ODPM LPF RAW
 					};
 					ch2 {
 						module_id = <CPU_MID_MITIGATION_ID>;
-						threshold = <145600>;
+						threshold = <109200>;
 					};
 					ch3 {
 						module_id = <CPU_BIG_MITIGATION_ID>;
@@ -130,45 +126,45 @@
 					};
 					ch4 {
 						module_id = <CPU_LITTLE_MITIGATION_ID>;
-						threshold = <145600>;
+						threshold = <72800>;
 					};
 					ch5 {
 						module_id = <INT_MITIGATION_ID>;
-						threshold = <97067>;
+						threshold = <72800>;
 					};
 					ch6 {
 						module_id = <LDO_MITIGATION_ID>;
-						threshold = <291200>;
+						threshold = <218400>;
 					};
 					ch7 {
 						module_id = <TPU_MITIGATION_ID>;
-						threshold = <97067>;
+						threshold = <72800>;
 					};
 					ch8 {
 						module_id = <LDO_MITIGATION_ID>;
-						threshold = <291200>;
+						threshold = <218400>;
 					};
 					ch9 {
 						module_id = <CPU_MID_MITIGATION_ID>;
-						threshold = <291200>;
+						threshold = <218400>;
 					};
 					ch10 {
 						module_id = <DISPLAY_MITIGATION_ID>;
-						threshold = <71670>;
+						threshold = <107321>;
 					};
 					ch11 {
 						module_id = <CAMERA_MITIGATION_ID>;
-						threshold = <71670>;
+						threshold = <107321>;
 					};
 					ch12 {
 						module_id = <CELLULAR_MITIGATION_ID>;
-						threshold = <71670>;
+						threshold = <107321>;
 					};
 				};
 				sub_mitigation {
 					ch1 {
 						module_id = <CAMERA_MITIGATION_ID>;
-						threshold = <145600>; /* ODPM LPF RAW */
+						threshold = <109200>; // ODPM LPF RAW
 					};
 					ch2 {
 						module_id = <GPU_MITIGATION_ID>;
@@ -176,80 +172,59 @@
 					};
 					ch3 {
 						module_id = <DDR_MITIGATION_ID>;
-						threshold = <291200>;
+						threshold = <145600>;
 					};
 					ch4 {
 						module_id = <DDR_MITIGATION_ID>;
-						threshold = <291200>;
+						threshold = <145600>;
 					};
 					ch5 {
 						module_id = <GPU_MITIGATION_ID>;
-						threshold = <2184002>;
+						threshold = <145600>;
 					};
 					ch6 {
 						module_id = <AOC_MITIGATION_ID>;
-						threshold = <291200>;
+						threshold = <145600>;
 					};
 					ch7 {
 						module_id = <UFS_MITIGATION_ID>;
-						threshold = <1092000>;
+						threshold = <546000>;
 					};
 					ch8 {
 						module_id = <GNSS_MITIGATION_ID>;
-						threshold = <291200>;
+						threshold = <2184002>;
 					};
 					ch9 {
 						module_id = <DDR_MITIGATION_ID>;
-						threshold = <819000>;
+						threshold = <409500>;
 					};
 					ch10 {
 						module_id = <MODEM_MITIGATION_ID>;
-						threshold = <71670>;
+						threshold = <107321>;
 					};
 					ch11 {
 						module_id = <WLAN_MITIGATION_ID>;
-						threshold = <143340>;
+						threshold = <107321>;
 					};
 					ch12 {
 						module_id = <CELLULAR_MITIGATION_ID>;
-						threshold = <143340>;
+						threshold = <107321>;
 					};
 				};
 				freq_qos {
-					batoilo {
-						cpucl0 = <1696000>;
-						cpucl1 = <1795000>;
-						cpucl2 = <1999000>;
-						gpu = <723000>;
-						tpu = <845000>;
+					oilo1 {
+						cpucl0 = <1696000 1696000>;
+						cpucl1 = <1795000 1795000>;
+						cpucl2 = <1999000 1999000>;
+						gpu = <723000 723000>;
+						tpu = <845000 845000>;
 					};
 					smpl_warn {
-						cpucl0 = <1696000>;
-						cpucl1 = <2130000>;
-						cpucl2 = <2499000>;
-						gpu = <723000>;
-						tpu = <845000>;
-					};
-					ramp_lvl_1 {
-						cpucl0 = <1849000>;
-						cpucl1 = <2245000>;
-						cpucl2 = <2409000>;
-						gpu = <723000>;
-						tpu = <845000>;
-					};
-					ramp_lvl_2 {
-						cpucl0 = <1950000>;
-						cpucl1 = <23670000>;
-						cpucl2 = <2802000>;
-						gpu = <723000>;
-						tpu = <845000>;
-					};
-					ramp_lvl_3 {
-						cpucl0 = <1950000>;
-						cpucl1 = <2450000>;
-						cpucl2 = <3015000>;
-						gpu = <723000>;
-						tpu = <845000>;
+						cpucl0 = <1696000 1696000>;
+						cpucl1 = <2130000 2130000>;
+						cpucl2 = <2499000 2499000>;
+						gpu = <723000 723000>;
+						tpu = <845000 845000>;
 					};
 				};
 			};

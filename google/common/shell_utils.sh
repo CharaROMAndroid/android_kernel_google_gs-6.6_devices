@@ -29,8 +29,8 @@ function gettop
 }
 
 function download_gki_prebuilts() {
-  python3 download_prebuilts.py --force --build_target kernel_aarch64 --build_id 14739656
-  python3 download_prebuilts.py --force --build_target kernel_aarch64_16k --build_id 14739656
+  python3 download_prebuilts.py --force --build_target kernel_aarch64 --build_id 15260256
+  python3 download_prebuilts.py --force --build_target kernel_aarch64_16k --build_id 15260256
 }
 
 function setup_cog_env_if_needed() {

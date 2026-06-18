@@ -19,3 +19,4 @@
 #include "lga-deepspace-bcl.dtsi"
 #include "lga-frankel-battery.dtsi"
 #include "lga-frankel-usbdp-phy.dtsi"
+#include "lga-frankel-wonder.dtsi"

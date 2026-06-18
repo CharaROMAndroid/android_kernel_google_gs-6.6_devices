@@ -6,6 +6,7 @@
  */
 
 #include "google-base/platform/lga-platform-common.dtsi"
+#include "google-base/lga-16kb.dtsi"
 #include "lga-rango-pmic.dtsi"
 #include "lga-rango-odpm.dtsi"
 #include "lga-rango-display.dtsi"

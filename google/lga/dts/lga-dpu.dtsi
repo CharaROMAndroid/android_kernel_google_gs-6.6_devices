@@ -146,7 +146,8 @@
 			fabrtfreq = <&fabrt_freq>;
 
 			tzprot-device = <&tzprot>;
-			boost-fabrt-freq = <533000>; /* boost FABRT freq to 533M */
+			boost-fab-freq = <533000>;
+			boost-core-freq = <666000>;
 
 			dc_out: ports {
 				#address-cells = <1>;

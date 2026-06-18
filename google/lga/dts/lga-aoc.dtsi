@@ -216,5 +216,6 @@
 
 		gsa-device = <&gsa>;
 		gsa-enabled = "true";
+		iif-device = <&iif>;
 	};
 };

@@ -5,7 +5,7 @@
  * Copyright 2025 Google LLC
  *
  * These pinctrl mappings are generated based on the Platform IO pin definitions.
- * Build id: 14538277
+ * Build id: 14551731
  */
 
 #include <dt-bindings/gpio/google,lga.h>

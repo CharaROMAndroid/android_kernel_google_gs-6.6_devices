@@ -197,11 +197,6 @@
 			no-map;
 		};
 
-		s2m@c0000000 {
-			reg = <0x00000000 0xc0000000 0x00000000 0x04a00000>; /* 74MB */
-			no-map;
-		};
-
 		/* cpif reserved memory */
 		cp_rmem: cp_rmem@ea400000 {
 			compatible = "exynos,modem_if";
@@ -211,11 +206,7 @@
 
 		cp_msi_rmem: cp_msi_rmem@f6200000 {
 			compatible = "exynos,modem_if";
-#if IS_ENABLED(CONFIG_ARM64_16K_PAGES)
-			reg = <0x00000000 0xf6200000 0x00000000 0x00004000>; /* 16KB */
-#else
 			reg = <0x00000000 0xf6200000 0x00000000 0x00001000>; /* 4KB */
-#endif
 			rmem_index = <1>;
 		};
 
@@ -286,12 +277,9 @@
 		};
 
 		famodel: famodel {
-			size = <0x0 0x04b00000>; /* 75MB */
 			alignment = <0x0 0x00010000>;
-			alloc-ranges = <0x9 0x80000000 0x80000000>,
-				<0x9 0x00000000 0x80000000>,
-				<0x8 0x80000000 0x80000000>,
-				<0x0 0x80000000 0x80000000>;
+			/* 75MB: Overlaps S2M 74MB */
+			reg = <0x00000000 0xc0000000 0x00000000 0x04b00000>;
 			status = "disabled";
 		};
 
@@ -308,12 +296,9 @@
 		};
 
 		farawimg: farawimg {
-			size = <0x0 0x05000000>; /* 80MB */
 			alignment = <0x0 0x00010000>;
-			alloc-ranges = <0x9 0x80000000 0x80000000>,
-				<0x9 0x00000000 0x80000000>,
-				<0x8 0x80000000 0x80000000>,
-				<0x0 0x80000000 0x80000000>;
+			/* 80MB: Overlaps ABL FB 20MB */
+			reg = <0x00000000 0xc4b00000 0x00000000 0x05000000>;
 			status = "disabled";
 		};
 

@@ -5,7 +5,7 @@
  * Copyright 2025 Google LLC
  *
  * These pinctrl mappings are generated based on the Platform IO pin definitions.
- * Build id: 14538277
+ * Build id: 14551731
  */
 
 #include <dt-bindings/gpio/google,lga.h>
@@ -4192,8 +4192,8 @@
 		"AP2FLASH_EN",
 		"AP2FLASH_STROBE",
 		"AP2CSID_RST_L",
+		"RUWCAM2AP_VSYNC",
 		"RCAM2AP_VSYNC",
-		"_K39",
 		"FCAM2AP_VSYNC",
 		"RTCAM2AP_VSYNC",
 		"DISP0_2_AP_PROX1_TOUT",
@@ -4222,22 +4222,6 @@
 		"GNSS2AP_SPI_MISO_1V2",
 		"AP2GNSS_SPI_CS_L_1V2",
 		"LSIOS_CAMERA_MUTE_1V2";
-
-	_k39: _k39 {
-		/* Imagers - Rear Wide */
-		pins = "XLSIOS_VSYNC2";
-		bias-pull-down;
-		function = "lsios_vsync";
-	};
-
-	_k39_sleep: _k39_sleep {
-		/* Imagers - Rear Wide - Sleep */
-		pins = "XLSIOS_VSYNC2";
-		bias-pull-down;
-		input-enable;
-		output-disable;
-		function = "lsios_gpio";
-	};
 
 	ap2cp_wakeup_1v2: ap2cp_wakeup_1v2 {
 		/* Connectivity - Modem */
@@ -4780,8 +4764,8 @@
 	};
 
 	rcam2ap_vsync: rcam2ap_vsync {
-		/* Imagers - Rear UW */
-		pins = "XLSIOS_VSYNC1";
+		/* Imagers - Rear Wide */
+		pins = "XLSIOS_VSYNC2";
 		bias-pull-down;
 		input-enable;
 		output-disable;
@@ -4789,8 +4773,8 @@
 	};
 
 	rcam2ap_vsync_sleep: rcam2ap_vsync_sleep {
-		/* Imagers - Rear UW - Sleep */
-		pins = "XLSIOS_VSYNC1";
+		/* Imagers - Rear Wide - Sleep */
+		pins = "XLSIOS_VSYNC2";
 		bias-pull-down;
 		input-enable;
 		output-disable;
@@ -4809,6 +4793,24 @@
 	rtcam2ap_vsync_sleep: rtcam2ap_vsync_sleep {
 		/* Imagers - Rear Tele - Sleep */
 		pins = "XLSIOS_VSYNC6";
+		bias-pull-down;
+		input-enable;
+		output-disable;
+		function = "lsios_gpio";
+	};
+
+	ruwcam2ap_vsync: ruwcam2ap_vsync {
+		/* Imagers - Rear UW */
+		pins = "XLSIOS_VSYNC1";
+		bias-pull-down;
+		input-enable;
+		output-disable;
+		function = "lsios_vsync";
+	};
+
+	ruwcam2ap_vsync_sleep: ruwcam2ap_vsync_sleep {
+		/* Imagers - Rear UW - Sleep */
+		pins = "XLSIOS_VSYNC1";
 		bias-pull-down;
 		input-enable;
 		output-disable;
@@ -5391,7 +5393,6 @@
 #define AP2LTAMP_SD_L_1V2(x) &lsion_pinctrl XLSION_CLI16_PIN1 x
 #define AP2UWB_RST_L_1V2(x) &lsion_pinctrl XLSION_CLI16_PIN0 x
 #define XLSION_CLI15_PIN3_AC6(x) &lsion_pinctrl XLSION_CLI15_PIN3 x
-#define _K39(x) &lsios_pinctrl XLSIOS_VSYNC2 x
 #define AP2CP_WAKEUP_1V2(x) &lsios_pinctrl XLSIOS_GPIO3 x
 #define AP2CSID_MCLK4(x) &lsios_pinctrl XLSIOS_MCLK4 x
 #define AP2CSID_RST_L(x) &lsios_pinctrl XLSIOS_PWM_1 x
@@ -5423,8 +5424,9 @@
 #define HALL1_2_AP_OUT_OD_L_1V2(x) &lsios_pinctrl XLSIOS_GPIO4 x
 #define LSIOS_CAMERA_MUTE_1V2(x) &lsios_pinctrl XLSIOS_CAMERA_MUTE x
 #define PRE_OCP_GPU_1V2(x) &lsios_pinctrl XLSIOS_PRE_OCP_GPU x
-#define RCAM2AP_VSYNC(x) &lsios_pinctrl XLSIOS_VSYNC1 x
+#define RCAM2AP_VSYNC(x) &lsios_pinctrl XLSIOS_VSYNC2 x
 #define RTCAM2AP_VSYNC(x) &lsios_pinctrl XLSIOS_VSYNC6 x
+#define RUWCAM2AP_VSYNC(x) &lsios_pinctrl XLSIOS_VSYNC1 x
 #define SOFT_PRE_OCP_GPU_1V2(x) &lsios_pinctrl XLSIOS_SOFT_PRE_OCP_GPU x
 #define SPARE_MCLK0_1V2(x) &lsios_pinctrl XLSIOS_MCLK0 x
 #define XLSIOS_CLI4_PIN3_P40(x) &lsios_pinctrl XLSIOS_CLI4_PIN3 x

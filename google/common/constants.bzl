@@ -12,6 +12,9 @@ PIXEL_GKI_MODULES_LIST = [
     # List of GKI modules to omit
     if m not in [
         # keep sorted
+        "arch/arm64/geniezone/gzvm.ko",
         "drivers/block/zram/zram.ko",
+        "drivers/ptp/ptp_kvm.ko",
+        "net/tls/tls.ko",
     ]
 ]

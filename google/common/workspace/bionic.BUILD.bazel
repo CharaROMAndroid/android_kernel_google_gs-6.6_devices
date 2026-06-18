@@ -1,5 +1,9 @@
 # SPDX-License-Identifier: GPL-2.0-only
 
+"""
+BUILD.bazel for @bionic.
+"""
+
 package(
     default_visibility = [
         "//visibility:public",

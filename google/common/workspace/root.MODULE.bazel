@@ -178,6 +178,6 @@ use_repo(kernel_prebuilt_ext, "gki_prebuilts_16k")
 
 new_kleaf_local_repository(
     name = "bionic",
-    build_file = "private/devices/google/common/kleaf/bionic.BUILD",
+    build_file = "private/devices/google/common/workspace/bionic.BUILD.bazel",
     path = "external/bionic",
 )

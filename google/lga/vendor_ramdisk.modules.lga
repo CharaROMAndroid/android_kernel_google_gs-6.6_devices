@@ -96,6 +96,7 @@ hardlockup-debug.ko
 heatmap.ko
 i2c-designware-core.ko
 i2c-designware-platform.ko
+iif.ko
 io-pgtable-pixel.ko
 irq-gia-google.ko
 irq-gia-lib.ko

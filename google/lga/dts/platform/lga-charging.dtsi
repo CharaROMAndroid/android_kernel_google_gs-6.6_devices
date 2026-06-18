@@ -89,6 +89,13 @@
 				#cooling-cells = <2>;
 			};
 
+			ggauge_health_monitor {
+				compatible = "google,ggauge_health_monitor";
+
+				google,vimon = <&max77779_vimon>;
+				google,bat-power-supply = "battery";
+				google,chg-power-supply = "gcpm";
+            };
 		};
 	};
 };

@@ -6,6 +6,7 @@
  */
 
 #include "google-base/platform/lga-platform-common.dtsi"
+#include "google-base/lga-16kb.dtsi"
 #include "lga-muzel-touch.dtsi"
 #include "lga-muzel-audio.dtsi"
 #include "lga-muzel-camera-pmic.dtsi"

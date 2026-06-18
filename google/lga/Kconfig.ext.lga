@@ -48,15 +48,17 @@ source "$(KCONFIG_EXT_MODULES_PREFIX)private/google-modules/bms/misc/Kconfig"
 
 source "$(KCONFIG_EXT_MODULES_PREFIX)private/google-modules/display/common/Kconfig"
 
+source "$(KCONFIG_EXT_MODULES_PREFIX)private/google-modules/display/interfaces/synopsys/dwc_dptx/Kconfig"
+
 source "$(KCONFIG_EXT_MODULES_PREFIX)private/google-modules/display/vsi-drm/bridge/synopsys/dsi2host/Kconfig"
 
 source "$(KCONFIG_EXT_MODULES_PREFIX)private/google-modules/display/vsi-drm/phy/synopsys/Kconfig"
 
 source "$(KCONFIG_EXT_MODULES_PREFIX)private/google-modules/display/vsi-drm/verisilicon/Kconfig"
 
-source "$(KCONFIG_EXT_MODULES_PREFIX)private/google-modules/display/vsi-drm/dwc_dptx/Kconfig"
-
 source "$(KCONFIG_EXT_MODULES_PREFIX)private/google-modules/display/vsi-g2d/google/Kconfig"
+
+source "$(KCONFIG_EXT_MODULES_PREFIX)private/google-modules/iif/Kconfig"
 
 source "$(KCONFIG_EXT_MODULES_PREFIX)private/google-modules/iommu/arm-smmu-v3/drivers/iommu/Kconfig"
 

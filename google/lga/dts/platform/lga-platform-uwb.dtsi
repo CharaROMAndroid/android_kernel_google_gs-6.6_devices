@@ -33,9 +33,11 @@
 		rx-sample-delay-ns = <25>;
 		spi-max-frequency = <20000000>;
 		pinctrl-0 = <&uwb2aoc_int_1v2>, <&ap2uwb_rst_l_1v2>,
-			    <&aoc2uwb_en_1v2>, <&ap2uwb_vsys_disable_l_1v2_default>;
+			    <&aoc2uwb_en_1v2>, <&ap2uwb_vsys_disable_l_1v2_default>,
+			    <&uwb2ap_pwr_state_1v2>;
 		pinctrl-1 = <&uwb2aoc_int_1v2>, <&ap2uwb_rst_l_1v2_sleep>,
-			    <&aoc2uwb_en_1v2_sleep>, <&ap2uwb_vsys_disable_l_1v2_default_sleep>;
+			    <&aoc2uwb_en_1v2_sleep>, <&ap2uwb_vsys_disable_l_1v2_default_sleep>,
+			    <&uwb2ap_pwr_state_1v2_sleep>;
 		pinctrl-names = "default", "sleep";
 		interrupt-parent = <&aoc_pinctrl>;
 		interrupts = <XAOC_GPIO4 0 0>;
@@ -43,6 +45,8 @@
 		/* b/343469733 */
 		u100-en-gpios = <&aoc_pinctrl XAOC_GPIO3 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
 		u100-sync-gpios = <AOC2UWB_WAKEUP_SYNC_1V2(GPIO_ACTIVE_HIGH)>;
+		u100-powerstat-gpios = <
+			&hsios_pinctrl XHSIOS_GPIO7 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
 		status = "okay";
 		controller-data {
 			samsung,spi-feedback-delay = <0>;

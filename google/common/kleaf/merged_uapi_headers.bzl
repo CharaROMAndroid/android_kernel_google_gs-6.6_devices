@@ -48,6 +48,7 @@ def _merged_uapi_headers_impl(ctx):
     if ctx.attr.clean:
         command += """
             export ANDROID_BUILD_TOP=.
+            export PYTHONNOUSERSITE=1
             mkdir -p prebuilts/clang/host/linux-x86/clang-stable
             ln -s $(realpath {clang_lib_dir}) prebuilts/clang/host/linux-x86/clang-stable/lib
             for f in $(find {intermediates_dir} -type f -printf '%P\n'); do

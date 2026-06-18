@@ -2564,61 +2564,32 @@
 	cap_sysfs {
 		compatible = "google,cap-sysfs";
 
-		idle_pm_stats_regions: idle_pm_stats_regions {
-			cap_statsbuf: cap_statsbuf@21911008 {
-				reg = <0 0x21911008 0 0x0140>;
-				states = <C3_CLUSTER0 C3_CLUSTER1 C3_CLUSTER2 C4 S3>;
-				states-verbose = "C3 - Cluster 0",
-						 "C3 - Cluster 1",
-						 "C3 - Cluster 2",
-						 "C4",
-						 "S3";
-			};
-
-			tfa_cpu_stats: tfa_cpu_stats@8b20f000 {
-				tf_a;
-				reg = <0 0x8b20f000 0 0x1000>;
-				states = <C2_CORE0>,
-						<C2_CORE1>,
-						<C2_CORE2>,
-						<C2_CORE3>,
-						<C2_CORE4>,
-						<C2_CORE5>,
-						<C2_CORE6>,
-						<C2_CORE7>;
-				states-verbose = "C2 - Core 0",
-						 "C2 - Core 1",
-						 "C2 - Core 2",
-						 "C2 - Core 3",
-						 "C2 - Core 4",
-						 "C2 - Core 5",
-						 "C2 - Core 6",
-						 "C2 - Core 7";
-			};
+		cap_statsbuf: cap_statsbuf@21910008 {
+			#address-cells = <2>;
+			#size-cells = <2>;
+			reg = <0 0x21910008 0 0x13F8>;
 		};
 
-		dvfs_stats_regions: dvfs_stats_regions {
-			cap_dvfs_stats: cap_dvfs_stats@21911148 {
-				reg = <0 0x21911148 0 0x0db0>;
-				rails = <CLK_LIT CLK_DSU CLK_BCI CLK_MID0 CLK_MID1 CLK_BIG>;
-				rails-verbose = "clk_lit",
-						"clk_dsu",
-						"clk_bci",
-						"clk_mid0",
-						"clk_mid1",
-						"clk_big";
-			};
-		};
+		tfa_cpu_stats: tfa_cpu_stats@8b20f000 {
+			reg = <0 0x8b20f000 0 0x1000>;
+			states = <C2_CORE0>,
+					<C2_CORE1>,
+					<C2_CORE2>,
+					<C2_CORE3>,
+					<C2_CORE4>,
+					<C2_CORE5>,
+					<C2_CORE6>,
+					<C2_CORE7>;
 
-		aging_clc_stats_regions: aging_clc_stats_regions {
-			cap_aging_clc_stats: cap_aging_clc_stats@21911ea8 {
-				reg = <0 0x21911ef8 0 0x0030>;
-				rails = <RAIL_VDD_CPU0 RAIL_VDD_CPU1 RAIL_VDD_CPU2>;
-				rails-verbose = "rail_vdd_cpu0",
-						"rail_vdd_cpu1",
-						"rail_vdd_cpu2";
+			states-verbose = "C2 - Core 0",
+						"C2 - Core 1",
+						"C2 - Core 2",
+						"C2 - Core 3",
+						"C2 - Core 4",
+						"C2 - Core 5",
+						"C2 - Core 6",
+						"C2 - Core 7";
 			};
-		};
 	};
 
 	arm_pmu-cpu0-6 {

@@ -22,10 +22,10 @@
 						"C1_T1__XLSIOS_CLI2_PIN1",
 						"C1_T3__XLSIOS_CLI2_PIN2",
 						"C2_T0__XLSIOS_CLI2_PIN3";
-				default_signals = "gp_region_0",
-							"gp_region_1",
-							"gp_region_2",
-							"gp_region_3";
+				default_signals = "0",
+							"0",
+							"0",
+							"0";
 			};
 		};
 	};

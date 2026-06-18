@@ -132,8 +132,8 @@ def device_build(
             "//private/devices/google/common/kleaf/files:build.config.common",
         ]
         base_kconfigs = []
-        base_kconfig_exts = []
-        base_defconfig_fragments = []
+        base_kconfig_exts = ["//common:kernel_package_kconfig"]
+        base_defconfig_fragments = ["//common:kernel_package_defconfig_fragment"]
         base_ext_modules = []
         base_kunit_modules = []
         base_ddk_uapi_headers = []
@@ -363,7 +363,7 @@ def device_build(
         name = target_system_dlkm_modules_list,
         out = "{}/system_dlkm.modules".format(name),
         # The list is used to filter modules with `grep -w`.
-        content = ["^kernel/" + m for m in PIXEL_GKI_MODULES_LIST],
+        contents = ["^kernel/" + m for m in PIXEL_GKI_MODULES_LIST],
         visibility = ["//visibility:private"],
     )
 
@@ -393,7 +393,7 @@ def device_build(
         name = target_vendor_dlkm_modules_list,
         out = "{}/vendor_dlkm.modules".format(name),
         # The list is used to filter modules with `grep -w`.
-        content = ["^kernel/" + m for m in module_outs] + ["^extra/.*"],
+        contents = ["^kernel/" + m for m in module_outs] + ["^extra/.*"],
         visibility = ["//visibility:private"],
     )
 
